@@ -1,0 +1,22 @@
+
+Please follow the below steps before you execute the python scripts:
+
+
+1. Update the config file "enron_load.ini" with MYSQL credentials and location of the log file
+2. Place the config file "enron_load.ini" in python working directory 
+3. Make sure you have installed python libraries os,csv,re,pymysql 
+       sudo conda install pymysql
+       sudo conda install os
+       sudo conda install csv
+       sudo conda install re
+       (or)
+       sudo pip install pymysql
+       sudo pip install os
+       sudo pip install csv
+       sudo pip install re
+4. Execute the "enron_ddl.sql" [FROM "SQL FILES" FOLDERS] in MYSQL to create the data model before running the python job.
+5. Run load.py and you will get messages from the console on load completion 
+6. Run insights.py which performs the analysis for the 3 questions and presents required insights
+Note:
+If you are trying to loading the same log file again and again , the job will notify you with error [based on the assumption message_id is unique]
+This job can be scheduled on daily basis to load the log files.
